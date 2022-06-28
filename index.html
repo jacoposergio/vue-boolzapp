@@ -4,18 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boozzap</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div id="root">
-      
-       
-     
+        <div id="wrapper">
+            <main>
+                <!-- divido il main in 2 sezioni, la nav a sx e la chat-window a destra -->
+                <nav>
+                    <!-- INIZIO COLONNA A SINISTRA -->
+                    <div class="user-bar">
+                        <div class="user-info">
+                          <div class="user-profile-pic">
+                            <img src="img/avatar_io.jpg" alt="mia immagine">
+                          </div>
+                          <div class="user-profile-text">
+                            <h2>Nome Utente</h2>
+                          </div>
+                        </div>
+                        <div class="user-nav-items">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <!-- ricevi una notifica  -->
+                    <div class="activate-notice-container">
+                        <div class="notice-image">
+                            <div class="bell-circle-container">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </div>
+                        </div>
+                        <div class="notice-text">
+                            <h2>Ricevi notifiche di nuovi messaggi</h2>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                    <!-- cerca o inizia una nuova chat  -->
+                    <div class="search-bar-container">
+                        <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
 
+                    
+                </nav>
+               <!-- FINE COLONNA A SINISTRA -->
 
+                <div class="chat-window">
+                    <div class="user-bar">
+                        <div class="user-info">
+                          <div class="user-profile-pic">
+                            <img src="img/avatar_io.jpg" alt="mia immagine">
+                          </div>
+                          <div class="user-profile-text">
+                            <h2>Nome Utente</h2>
+                            <div class="last-access" >Ultimo accesso oggi alle</div>
+                          </div>
+                        </div>
+                        <div class="user-nav-items">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                </div>
+            </main>
+                
+         </div>
     </div>
     <script src="js/script.js"></script>
 </body>
