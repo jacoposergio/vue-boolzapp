@@ -49,58 +49,18 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <!-- sezione contatti con cui chattare  -->
-                    <div class="start contact-list-container">
+                    <div v-for="singleContact,index in contacts" class="contact-list-container">
 
                         <!-- **** single contact template **** -->
                         <div class="single-contact">
                             <div class="contact-image">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img src="`img/avatar ${{singleContact.avatar}} .jpg`" alt="">
                             </div>
                             <div class="contact-text">
-                                <h2>Michele</h2>
+                                <h2>{{ singleContact.name }}</h2>
                             </div>
                         </div>
                      <!-- **** end single contact template **** -->
-                        <!-- **** single contact template **** -->
-                        <div class="single-contact">
-                            <div class="contact-image">
-                                <img src="img/avatar_5.jpg" alt="">
-                            </div>
-                            <div class="contact-text">
-                                <h2>Fabio</h2>
-                            </div>
-                        </div>
-                    <!-- **** end single contact template **** -->
-                        <!-- **** single contact template **** -->
-                        <div class="single-contact">
-                            <div class="contact-image">
-                                <img src="img/avatar_3.jpg" alt="">
-                            </div>
-                            <div class="contact-text">
-                                <h2>Samuele</h2>
-                            </div>
-                        </div>
-                    <!-- **** end single contact template **** -->
-                    <!-- **** single contact template **** -->
-                    <div class="single-contact">
-                        <div class="contact-image">
-                            <img src="img/avatar_4.jpg" alt="">
-                        </div>
-                        <div class="contact-text">
-                            <h2>Luisa</h2>
-                        </div>
-                    </div>
-                <!-- **** end single contact template **** -->
-                   <!-- **** single contact template **** -->
-                   <div class="single-contact">
-                    <div class="contact-image">
-                        <img src="img/avatar_4.jpg" alt="">
-                    </div>
-                    <div class="contact-text">
-                        <h2>Luisa</h2>
-                    </div>
-                </div>
-            <!-- **** end single contact template **** -->
 
                     </div>
                 </nav>
@@ -153,7 +113,7 @@
                         <div class="msg-container my-msg">
                             <div class="msg-content">
                               <div class="actual-msg">
-                                  lmessaggio del contattona
+                                  messaggio del contattona
                               </div>
                               <div class="sending-time">
                                 <p>26/02/2020 12:11:10</p>

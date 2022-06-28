@@ -29,13 +29,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 4rem 0;
   }
 
   /* INIZIO MAIN  */
 
   main{
     background-color: rgb(128, 113, 113);
-    height: 95%;
+    height: 100%;
     width: 1200px;
     /* overflow-x: auto; */
     display: flex;
@@ -94,6 +95,7 @@
   .chat-column .last-access{
     font-size: 0.7rem;
     font-weight: 500;
+    color: #b1b1b1;
   }
 
   /* attiva notifica ( sx) */
@@ -151,7 +153,7 @@
 
   .contact-list-container{
     margin-top: 0.5rem;
-    height: 70%;
+    width: 100%;
     overflow-y: auto;
   }
 
@@ -186,9 +188,10 @@
     position:absolute;
     bottom: 0; 
     left: 0;
-    z-index: 1;
+    z-index: 6;
     padding: 0.5rem 0;
     background-color: aliceblue;
+  
 }
 
 .send-message-container .input-text-msg{
@@ -218,10 +221,10 @@
 .chat-window-container{
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .msg-container{
-    
     width: fit-content;
     padding: 1rem;
     max-width: 50%;
