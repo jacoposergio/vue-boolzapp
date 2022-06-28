@@ -46,7 +46,7 @@
       width: calc(100% / 3);
       min-width: 400px;
       height: 100%;
-      border-right: 1px solid light-grey;
+      border-right: 1px solid #b1b1b1;
   }
 
   .chat-column{
@@ -82,6 +82,7 @@
 
   .user-nav-items{
     font-size: 1.1rem;
+    color: #b1b1b1;
   }
 
   .user-nav-items i{
@@ -205,6 +206,7 @@
     text-align: center;
     width: 10%;
     cursor: pointer;
+    color: #b1b1b1;
 }
 
 .send-message-container i{
@@ -231,12 +233,12 @@
     margin-top: 3rem;
 }
 
-.msg-container.my-msg{
+.msg-container.contact-msg{
     align-self: flex-start;
     background-color:  #ffffff;
 }
 
-.msg-container.contact-msg{
+.msg-container.my-msg{
     align-self: flex-end;
     background-color: #caecb1;
 }
