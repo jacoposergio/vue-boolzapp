@@ -13,7 +13,7 @@
     <div id="root">
         <div id="wrapper">
             <main>
-                <!-- divido il main in 2 sezioni, la nav a sx e la chat-window a destra -->
+                <!-- divido il main in 2 sezioni, la nav a sx e la chat-column a destra -->
                 <nav>
                     <!-- INIZIO COLONNA A SINISTRA -->
                     <div class="user-bar">
@@ -49,23 +49,65 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <!-- sezione contatti con cui chattare  -->
-                    <div class="contact-list-container">
+                    <div class="start contact-list-container">
+
+                        <!-- **** single contact template **** -->
                         <div class="single-contact">
                             <div class="contact-image">
                                 <img src="img/avatar_1.jpg" alt="">
                             </div>
+                            <div class="contact-text">
+                                <h2>Michele</h2>
+                            </div>
+                        </div>
+                     <!-- **** end single contact template **** -->
+                        <!-- **** single contact template **** -->
+                        <div class="single-contact">
+                            <div class="contact-image">
+                                <img src="img/avatar_5.jpg" alt="">
+                            </div>
+                            <div class="contact-text">
+                                <h2>Fabio</h2>
+                            </div>
+                        </div>
+                    <!-- **** end single contact template **** -->
+                        <!-- **** single contact template **** -->
+                        <div class="single-contact">
+                            <div class="contact-image">
+                                <img src="img/avatar_3.jpg" alt="">
+                            </div>
+                            <div class="contact-text">
+                                <h2>Samuele</h2>
+                            </div>
+                        </div>
+                    <!-- **** end single contact template **** -->
+                    <!-- **** single contact template **** -->
+                    <div class="single-contact">
+                        <div class="contact-image">
+                            <img src="img/avatar_4.jpg" alt="">
+                        </div>
                         <div class="contact-text">
-                            <h2>Michele</h2>
+                            <h2>Luisa</h2>
                         </div>
-                        </div>
+                    </div>
+                <!-- **** end single contact template **** -->
+                   <!-- **** single contact template **** -->
+                   <div class="single-contact">
+                    <div class="contact-image">
+                        <img src="img/avatar_4.jpg" alt="">
+                    </div>
+                    <div class="contact-text">
+                        <h2>Luisa</h2>
+                    </div>
+                </div>
+            <!-- **** end single contact template **** -->
 
                     </div>
-
-                    
                 </nav>
                <!-- FINE COLONNA A SINISTRA -->
 
-                <div class="chat-window">
+                <div class="chat-column">
+                    <!-- barra utente in alto (uguale a quella di sx) -->
                     <div class="user-bar">
                         <div class="user-info">
                           <div class="user-profile-pic">
@@ -80,6 +122,43 @@
                             <i class="fa-solid fa-circle-notch"></i>
                             <i class="fa-solid fa-message"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <!-- barra inferiore di invio messaggi  -->
+                    <div class="send-message-container">
+                        <div class="reactions">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div class="input-text-msg">
+                            <input type="text" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div class="mic-open">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </div>
+                    <!-- finestra della chat  -->
+                    <div class="chat-window-container">
+                        <!-- inizio messaggio  -->
+                        <div class="msg-container my-msg">
+                            <div class="msg-content">
+                              <div class="actual-msg">
+                                  la Marianna va in campagna
+                              </div>
+                              <div class="sending-time">
+                                 <p>26/02/2020 10:10:40</p>
+                              </div>
+                            </div>
+                        </div>
+                        <!-- fine messaggio  -->
+                        <div class="msg-container contact-msg">
+                            <div class="msg-content">
+                              <div class="actual-msg">
+                                  lmessaggio del contattona
+                              </div>
+                              <div class="sending-time">
+                                <p>26/02/2020 12:11:10</p>
+                              </div>
+                            </div>
                         </div>
                     </div>
                 </div>
