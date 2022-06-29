@@ -9,6 +9,7 @@ var app = new Vue(
  {
     el: '#root',
     data: {
+        lastAccess: dayjs().format('10:mm'),
         currentActiveElement: 0,
         userNewMessageText: "",
     contacts: [
@@ -100,18 +101,18 @@ var app = new Vue(
 // ! inizio methods
     methods : {
         setActiveElement(Index) {
-            // this.currentActiveElement uguale all'indice dell'elemento su cui ho cliccato
+            // this.currentActiveElement sarà uguale all'indice 
+            // dell'elemento su cui ho cliccato
             this.currentActiveElement = Index;
             },
-
+    
         sendNewMessage(){
+        // se la stringa non è vuota invio il messaggio,
+        // creo un nuovo oggetto e lo pusho in messages 
             if(this.userNewMessageText.length > 0) {
-                // Devo leggere il testo della input
-                // Creare un nuovo oggetto
-                // e pusharlo
                 this.contacts[this.currentActiveElement].messages.push(
                     {
-                        date: '28/03/2020 10:20:10',
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                         text: this.userNewMessageText,
                         status: 'sent'   
                     }
@@ -119,7 +120,19 @@ var app = new Vue(
                 // Svuoto la input
                 this.userNewMessageText = '';
             }
-          }   
+          },   
+        
+        sendAnswer(){
+                this.contacts[this.currentActiveElement].messages.push(
+                    {
+                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                        text: 'ok',
+                        status: 'received'   
+                    }
+                );
+                // Svuoto la input
+                this.userNewMessageText = '';
+            }     
     }
     // ! fine methods
 }
