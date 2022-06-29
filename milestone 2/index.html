@@ -55,7 +55,7 @@
                         <div v-for="(singleContact,index) in contacts" class="contact-list">  
 
                             <!-- **** single contact template **** -->
-                            <div @click="setActiveElement(index)" class="single-contact">    <!--aggiungere classe active quando è selezionato -->
+                            <div @click="setActiveElement(index)" :class="{'active': index === currentActiveElement}" class="single-contact">    <!--aggiungere classe active quando è selezionato -->
                                 <div class="contact-image">
                                     <img :src="`img/avatar${singleContact.avatar}.jpg`" :alt="`avatar di ${singleContact.name}` ">
                                 </div>
@@ -103,13 +103,13 @@
                     <div class="chat-window-container">
 
                         <!-- inizio messaggio  -->
-                        <div v-for="(singleMessage, index) in contacts[currentActiveElement].messages" class="msg-container received-msg">
-                            <div  class="msg-content">
-                                <div class="msg-bobble">
+                        <div v-for="(singleMessage, index) in contacts[currentActiveElement].messages" :class="{'sent-msg': singleMessage.status == 'sent', 'received-msg': singleMessage.status == 'received' }" class="msg-container">
+                            <div  class="msg-bubble">
+                                <div class="msg-text">
                                     {{singleMessage.text}}
                                 </div>
                                 <div class="sending-time">
-                                    <p> {{singleMessage.date}}</p>
+                                    <p>{{singleMessage.date}}</p>
                                 </div>
                             </div>
                         </div>

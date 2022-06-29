@@ -268,11 +268,11 @@
       background-color: #caecb1;
   }
 
-  .msg-content{
+  .msg-bubble{
       position: relative;
   }
 
-  .msg-content .msg-bobble{
+  .msg-bubble .msg-text{
       margin-bottom: 1rem;
   }
 

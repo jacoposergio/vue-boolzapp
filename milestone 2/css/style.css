@@ -252,34 +252,37 @@
       max-width: 50%;
       border-radius: 1rem;
       margin: 1rem 4rem;
-  }
-
-  .msg-container:first-child{
-      margin-top: 3rem;
-  }
-
-  .msg-container.received-msg{
-      align-self: flex-start;
-      background-color:  #ffffff;
-  }
-
-  .msg-container.sent-msg{
-      align-self: flex-end;
-      background-color: #caecb1;
-  }
-
-  .msg-content{
       position: relative;
   }
 
-  .msg-content .msg-bobble{
+    .msg-container:first-child{
+        margin-top: 3rem;
+    }
+
+    .msg-container.received-msg{
+        align-self: flex-start;
+        background-color:  #ffffff;
+    }
+
+    .msg-container.sent-msg{
+        align-self: flex-end;
+        background-color: #caecb1;
+    }
+
+    .msg-container .msg-bubble{
+        margin-bottom: 1rem;
+        min-width: 200px;
+        position: relative;
+    }
+
+    .msg-bubble .msg-text{
       margin-bottom: 1rem;
-      min-width: 200px;
-  }
+      word-break: break-all;
+    }
 
   .sending-time p{
       font-size: 0.6rem;
       position: absolute;
-      right: 0;
+      right: 0.3rem;
       color: gray;
   }
