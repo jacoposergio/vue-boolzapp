@@ -45,27 +45,27 @@
                     </div>
                     <!-- cerca o inizia una nuova chat  -->
                     <div class="search-bar-container">
-                        <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <label for="contact-search"><i class="fa-solid fa-magnifying-glass"></i></label>
+                        <input type="text" id="contact-search" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <!-- sezione contatti con cui chattare  -->
-                    <div v-for="singleContact,index in contacts" class="contact-list-container">
+                    <div v-for="contact in contacts" class="contact-list-container">
 
                         <!-- **** single contact template **** -->
                         <div class="single-contact">
                             <div class="contact-image">
-                                <img src="`img/avatar ${{singleContact.avatar}} .jpg`" alt="">
+                                <img src="`img/avatar${contact.avatar}.jpg`" :alt="`avatar di ${contact.name}` ">
                             </div>
                             <div class="contact-text">
-                                <h2>{{ singleContact.name }}</h2>
+                                <h2>{{ contact.name }}</h2>
                             </div>
                         </div>
                      <!-- **** end single contact template **** -->
 
                     </div>
                 </nav>
-               <!-- FINE COLONNA A SINISTRA -->
 
+               <!-- INIZIO COLONNA A DESTRA  -->
                 <div class="chat-column">
                     <!-- barra utente in alto (uguale a quella di sx) -->
                     <div class="user-bar">
@@ -79,8 +79,8 @@
                           </div>
                         </div>
                         <div class="user-nav-items">
-                            <i class="fa-solid fa-circle-notch"></i>
-                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                     </div>
