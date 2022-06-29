@@ -53,7 +53,7 @@
                    </div>
                     <!-- sezione contatti con cui chattare  -->
                     <div class="contact-list-container">
-                        <div v-for="(singleContact,index) in contacts" class="contact-list">  
+                        <div v-for="(singleContact,index) in contacts" v-if="contacts[1].visible === true" class="contact-list">  
 
                             <!-- **** single contact template **** -->
                             <div @click="setActiveElement(index)" :class="{'active': index === currentActiveElement}" class="single-contact">    <!--aggiungere classe active quando è selezionato -->
