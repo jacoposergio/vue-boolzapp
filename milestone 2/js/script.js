@@ -9,7 +9,7 @@ var app = new Vue(
  {
     el: '#root',
     data: {
-        // currentActiveElement: 0,
+        currentActiveElement: 0,
     contacts: [
         {
             name: 'Michele',
@@ -95,6 +95,12 @@ var app = new Vue(
             ],
         },
     ]
-  }
- }
+},
+    methods : {
+        setActiveElement(Index) {
+            // this.currentActiveElement uguale all'indice dell'elemento su cui ho cliccato
+            this.currentActiveElement = Index;
+            }
+    }
+}
 );
