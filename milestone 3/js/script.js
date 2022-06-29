@@ -9,8 +9,8 @@ var app = new Vue(
  {
     el: '#root',
     data: {
-        userNewMessageText: "",
         currentActiveElement: 0,
+        userNewMessageText: "",
     contacts: [
         {
             name: 'Michele',
@@ -103,22 +103,23 @@ var app = new Vue(
             // this.currentActiveElement uguale all'indice dell'elemento su cui ho cliccato
             this.currentActiveElement = Index;
             },
+
         sendNewMessage(){
-            if(userNewMessageText.length > 0) {
+            if(this.userNewMessageText.length > 0) {
                 // Devo leggere il testo della input
                 // Creare un nuovo oggetto
-                const newMessageObject = {
-                    date: '10/01/2020 15:50:00',
-                    text: userNewMessageText,
-                    status: 'sent'
-                };
                 // e pusharlo
-                this.contacts[this.currentActiveElement].messages.push(newMessageObject);
+                this.contacts[this.currentActiveElement].messages.push(
+                    {
+                        date: '28/03/2020 10:20:10',
+                        text: this.userNewMessageText,
+                        status: 'sent'   
+                    }
+                );
                 // Svuoto la input
                 this.userNewMessageText = '';
             }
-            
-        }    
+          }   
     }
     // ! fine methods
 }
