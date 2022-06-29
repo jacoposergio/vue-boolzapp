@@ -8,10 +8,10 @@ var app = new Vue(
  {
     el: '#root',
     data: {
-        isVisible : true,
+        contactSearchFilter: '',
         lastAccess: dayjs().format('10:mm'),
         currentActiveElement: 0,
-        userNewMessageText: "",
+        userNewMessageText: '',
     contacts: [
         {
             name: 'Michele',
@@ -123,16 +123,26 @@ var app = new Vue(
           },   
         // funzione per la risposta, quasi uguale a quella di invio 
         sendAnswer(){
-                this.contacts[this.currentActiveElement].messages.push(
-                    {
-                        date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                        text: 'ok',
-                        status: 'received'   
+            this.contacts[this.currentActiveElement].messages.push(
+                {
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                    text: 'ok',
+                    status: 'received'   
+                }
+            );
+            // Svuoto la input
+            this.userNewMessageText = '';
+            },
+
+            filterContacts(){
+                this.contacts.forEach((element) => {
+                    if(element.name.toLowerCase().includes(this.contactSearchFilter.toLowerCase())) {
+                        element.visible = true;
+                    } else {
+                        element.visible = false;
                     }
-                );
-                // Svuoto la input
-                this.userNewMessageText = '';
-            }     
+                });
+        },        
     }
 // ! *************** fine methods ********************
 }

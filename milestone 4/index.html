@@ -48,12 +48,12 @@
                     <div class="search-bar-wrapper">
                         <div class="search-bar-container">
                             <label for="contact-search"><i class="fa-solid fa-magnifying-glass"></i></label>
-                            <input type="text" id="contact-search" placeholder="Cerca o inizia una nuova chat">
+                            <input @keyup="filterContacts()" v-model="contactSearchFilter" type="text" id="contact-search" placeholder="Cerca o inizia una nuova chat">
                         </div>
                    </div>
                     <!-- sezione contatti con cui chattare  -->
                     <div class="contact-list-container">
-                        <div v-for="(singleContact,index) in contacts" v-if="isVisible === true" class="contact-list">  
+                        <div v-for="(singleContact,index) in contacts" class="contact-list">  
 
                             <!-- **** single contact template **** -->
                             <div @click="setActiveElement(index)" :class="{'active': index === currentActiveElement}" class="single-contact">    <!--aggiungere classe active quando è selezionato -->
