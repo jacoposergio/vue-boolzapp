@@ -52,10 +52,10 @@
                    </div>
                     <!-- sezione contatti con cui chattare  -->
                     <div class="contact-list-container">
-                        <div v-for="singleContact in contacts" class="contact-list">  
+                        <div v-for="(singleContact,index) in contacts" class="contact-list">  
 
                             <!-- **** single contact template **** -->
-                            <div class="single-contact">    <!--aggiungere classe active quando è selezionato -->
+                            <div @click="setActiveElement(index)" class="single-contact">    <!--aggiungere classe active quando è selezionato -->
                                 <div class="contact-image">
                                     <img :src="`img/avatar${singleContact.avatar}.jpg`" :alt="`avatar di ${singleContact.name}` ">
                                 </div>
@@ -72,12 +72,12 @@
                 <div class="chat-column">
                     <!-- barra utente in alto (uguale a quella di sx) -->
                     <div class="user-bar">
-                        <div class="user-info">
+                        <div  class="user-info">
                           <div class="user-profile-pic">
-                            <img src="img/avatar_io.jpg" alt="mia immagine">
+                            <img :src="`img/avatar${contacts[currentActiveElement].avatar}.jpg`" alt="mia immagine">
                           </div>
                           <div class="user-profile-text">
-                            <h2>Nome Utente</h2>
+                            <h2>{{contacts[currentActiveElement].name}}</h2>
                             <div class="last-access" >Ultimo accesso oggi alle</div>
                           </div>
                         </div>
@@ -103,14 +103,14 @@
                     <div class="chat-window-container">
 
                         <!-- inizio messaggio  -->
-                        <div class="msg-container received-msg">
-                            <div v-for="(singleMessage, index) in contacts[currentActiveElement].messages"  class="msg-content">
-                              <div class="actual-msg">
-                                  {{singleMessage.text}}
-                              </div>
-                              <div class="sending-time">
-                                 <p> {{singleMessage.date}}</p>
-                              </div>
+                        <div v-for="(singleMessage, index) in contacts[currentActiveElement].messages" class="msg-container received-msg">
+                            <div  class="msg-content">
+                                <div class="msg-bobble">
+                                    {{singleMessage.text}}
+                                </div>
+                                <div class="sending-time">
+                                    <p> {{singleMessage.date}}</p>
+                                </div>
                             </div>
                         </div>
                         <!-- fine messaggio  -->

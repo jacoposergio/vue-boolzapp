@@ -17,8 +17,6 @@
     font-size: 0.9rem;
   }
 
-
-
   img{
     width: 100%;
   }
@@ -274,8 +272,9 @@
       position: relative;
   }
 
-  .msg-content .actual-msg{
+  .msg-content .msg-bobble{
       margin-bottom: 1rem;
+      min-width: 200px;
   }
 
   .sending-time p{
