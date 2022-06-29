@@ -258,12 +258,12 @@
       margin-top: 3rem;
   }
 
-  .msg-container.contact-msg{
+  .msg-container.received-msg{
       align-self: flex-start;
       background-color:  #ffffff;
   }
 
-  .msg-container.my-msg{
+  .msg-container.sent-msg{
       align-self: flex-end;
       background-color: #caecb1;
   }
