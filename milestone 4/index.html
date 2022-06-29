@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzzap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="root">
+        <div id="wrapper">
+            <main>
+                <!-- divido il main in 2 sezioni, la nav a sx e la chat-column a destra -->
+                <nav>
+                    <!-- INIZIO COLONNA A SINISTRA -->
+                    <div class="user-bar">
+                        <div class="user-info">
+                          <div class="user-profile-pic">
+                            <img src="img/avatar_io.jpg" alt="mia immagine">
+                          </div>
+                          <div class="user-profile-text">
+                            <h2>Nome Utente</h2>
+                          </div>
+                        </div>
+                        <div class="user-nav-items">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <!-- ricevi una notifica  -->
+                    <div class="activate-notice-container">
+                        <div class="notice-image">
+                            <div class="bell-circle-container">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </div>
+                        </div>
+                        <div class="notice-text">
+                            <h2>Ricevi notifiche di nuovi messaggi</h2>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                    <!-- cerca o inizia una nuova chat  -->
+                    <div class="search-bar-wrapper">
+                        <div class="search-bar-container">
+                            <label for="contact-search"><i class="fa-solid fa-magnifying-glass"></i></label>
+                            <input type="text" id="contact-search" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                   </div>
+                    <!-- sezione contatti con cui chattare  -->
+                    <div class="contact-list-container">
+                        <div v-for="(singleContact,index) in contacts" v-if="isVisible === true" class="contact-list">  
+
+                            <!-- **** single contact template **** -->
+                            <div @click="setActiveElement(index)" :class="{'active': index === currentActiveElement}" class="single-contact">    <!--aggiungere classe active quando è selezionato -->
+                                <div class="contact-image">
+                                    <img :src="`img/avatar${singleContact.avatar}.jpg`" :alt="`avatar di ${singleContact.name}` ">
+                                </div>
+                                <div class="contact-text">
+                                    <h2>{{ singleContact.name }}</h2>
+                                </div>
+                            </div>
+                        <!-- **** end single contact template **** -->
+                        
+                        </div>
+                    </div>
+                </nav>
+               <!-- INIZIO COLONNA A DESTRA  -->
+                <div class="chat-column">
+                    <!-- barra utente in alto (uguale a quella di sx) -->
+                    <div class="user-bar">
+                        <div  class="user-info">
+                          <div class="user-profile-pic">
+                            <img :src="`img/avatar${contacts[currentActiveElement].avatar}.jpg`" alt="mia immagine">
+                          </div>
+                          <div class="user-profile-text">
+                            <h2>{{contacts[currentActiveElement].name}}</h2>
+                            <div class="last-access" >Ultimo accesso oggi alle {{lastAccess}} </div>
+                          </div>
+                        </div>
+                        <div class="user-nav-items">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <!-- barra inferiore di invio messaggi  -->
+                    <div class="send-message-container">
+                        <div class="reactions">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div class="input-text-msg">
+                            <input @keyup.enter="sendNewMessage(), setTimeout(sendAnswer, 1000)" v-model="userNewMessageText" type="text" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div class="mic-open">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </div>
+                    <!-- finestra della chat  -->
+                    <div class="chat-window-container">
+
+                        <!-- inizio messaggio  -->
+                        <div v-for="(singleMessage, index) in contacts[currentActiveElement].messages" :class="{'sent-msg': singleMessage.status == 'sent', 'received-msg': singleMessage.status == 'received' }" class="msg-container">
+                            <div  class="msg-bubble">
+                                <div class="msg-text">
+                                    {{singleMessage.text}}
+                                </div>
+                                <div class="sending-time">
+                                    <p>{{singleMessage.date}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- fine messaggio  -->
+
+                    </div>
+                </div>
+            </main>
+                
+         </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
