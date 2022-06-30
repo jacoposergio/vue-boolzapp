@@ -78,10 +78,13 @@
                                 </div>
                                 <div class="contact-text">
                                     <h2>{{ singleContact.name }}</h2>
-                                    <p class="last-message">ultimo messaggio</p>
+                                    <p
+                                     class="last-message">{{singleContact.messages
+                                        [singleContact.messages.length - 1].text.substring(0,25)}} ...
+                                    </p>
                                 </div>
                                 <div class="last-msg-date">
-                                    <p>orario mex</p>
+                                    <p>{{singleContact.messages[singleContact.messages.length - 1].date}}</p>
                                 </div>
                             </div>
                         <!-- **** end single contact template **** -->
@@ -102,7 +105,10 @@
                           </div>
                           <div class="user-profile-text">
                             <h2>{{contacts[currentActiveElement].name}}</h2>
-                            <div class="last-access" >Ultimo accesso oggi alle {{lastAccess}} </div>
+                            <div
+                                class="last-access">Ultimo accesso oggi alle {{contacts[currentActiveElement].messages
+                                    [contacts[currentActiveElement].messages.length - 1].date.slice(11)}}
+                            </div>
                           </div>
                         </div>
                         <div class="user-nav-items">

@@ -205,6 +205,8 @@
     font-weight: 500;
     color: #6a7376;
     margin-top: 0.3rem;
+    margin-right: 2rem;
+    overflow: hidden;
   }
   
   .single-contact .last-msg-date{
@@ -267,7 +269,7 @@
       height: 100%;
       flex-grow: 1;
       overflow-y: auto;
-      margin-bottom: 4rem;
+      margin-bottom: 3.5rem;
   }
 
   .msg-container{
