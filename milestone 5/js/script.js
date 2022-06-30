@@ -8,6 +8,7 @@ var app = new Vue(
  {
     el: '#root',
     data: {
+        messageActive: 0,
         menuIsVisible: false,
         contactSearchFilter: '',
         lastAccess: dayjs().format('10:mm'),
@@ -145,9 +146,10 @@ var app = new Vue(
                 });
              },
               
-             showMenu() {
+             showMenu(index) {
               // toggle per mostrare il menu al click sulla chevron
                 this.menuIsVisible = !this.menuIsVisible;
+                this.messageActive = index;
             },
             
             hideMenu(){

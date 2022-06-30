@@ -135,7 +135,7 @@
                              'received-msg': singleMessage.status === 'received' }"
                          >
                             <div  class="msg-bubble">
-                                <div  @click="showMenu()" class="chevron">
+                                <div  @click="showMenu(index)" class="chevron">
                                   <i class="fa fa-chevron-down" aria-hidden="true"></i>   
                                 </div>
                                 <div class="msg-text">
@@ -145,7 +145,7 @@
                                     <p>{{singleMessage.date}}</p>
                                 </div>
                             </div>
-                            <div v-if="menuIsVisible" class="drop-down-menu">
+                            <div  v-if="menuIsVisible && messageActive === index" class="drop-down-menu">
                                 <p>Message info</p>
                                 <p  @click="deleteMessage(index)">Delete message</p>
                             </div>
