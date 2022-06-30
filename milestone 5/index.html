@@ -64,11 +64,11 @@
 
                             <!-- **** single contact template **** -->
                             <div
+                                class="single-contact"
                                 v-for="(singleContact,index) in contacts" 
                                 v-if="singleContact.visible === true" 
                                 @click="setActiveElement(index), hideMenu()"
                                 :class="{'active': index === currentActiveElement}" 
-                                class="single-contact"
                              > 
                                 <div class="contact-image">
                                     <img 
@@ -78,6 +78,10 @@
                                 </div>
                                 <div class="contact-text">
                                     <h2>{{ singleContact.name }}</h2>
+                                    <p class="last-message">ultimo messaggio</p>
+                                </div>
+                                <div class="last-msg-date">
+                                    <p>orario mex</p>
                                 </div>
                             </div>
                         <!-- **** end single contact template **** -->

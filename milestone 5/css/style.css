@@ -175,7 +175,7 @@
 
   .single-contact{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding: 0.5rem 1rem;
     background-color: white;
     margin-bottom: 0.1rem;
@@ -197,6 +197,30 @@
 
   .single-contact .contact-text{
     margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .single-contact .contact-text p{
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #6a7376;
+    margin-top: 0.3rem;
+  }
+  
+  .single-contact .last-msg-date{
+     flex-grow: 2;
+     display: flex;
+     margin-top: 0.5rem;
+     display: flex;
+     justify-content: flex-end;
+  }
+
+  .single-contact .last-msg-date p{
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #6a7376;
+    margin-top: 0.3rem;
+    margin-right: 1rem;
   }
 
   /* send message bar dx */
