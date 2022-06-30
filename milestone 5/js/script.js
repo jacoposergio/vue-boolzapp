@@ -155,6 +155,7 @@ var app = new Vue(
             hideMenu(){
             //    la tendina aperta si chiuderà cliccando fuori
                 this.menuIsVisible = false;
+                this.messageActive = 0;
             },
 
             deleteMessage(Index) {

@@ -66,7 +66,7 @@
                             <div
                                 v-for="(singleContact,index) in contacts" 
                                 v-if="singleContact.visible === true" 
-                                @click="setActiveElement(index)"
+                                @click="setActiveElement(index), hideMenu()"
                                 :class="{'active': index === currentActiveElement}" 
                                 class="single-contact"
                              > 
