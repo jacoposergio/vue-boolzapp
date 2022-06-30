@@ -96,8 +96,8 @@ var app = new Vue(
                 }
             ],
         },
-    ]
-},
+      ]
+    },
 // ! *************** inizio methods ********************
     methods : {
         setActiveElement(Index) {
@@ -130,11 +130,11 @@ var app = new Vue(
                     status: 'received'   
                 }
             );
-            // Svuoto la input
-            this.userNewMessageText = '';
             },
 
             filterContacts(){
+                // per ogni elemento di contacts, se contiene le stesse
+                // lettere, il contatto saraà visible se no scomparirà
                 this.contacts.forEach((element) => {
                     if(element.name.toLowerCase().includes(this.contactSearchFilter.toLowerCase())) {
                         element.visible = true;
@@ -142,8 +142,7 @@ var app = new Vue(
                         element.visible = false;
                     }
                 });
-        },        
-    }
+             },        
+        }
 // ! *************** fine methods ********************
-}
-);
+ } );

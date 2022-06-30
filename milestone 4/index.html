@@ -48,17 +48,32 @@
                     <div class="search-bar-wrapper">
                         <div class="search-bar-container">
                             <label for="contact-search"><i class="fa-solid fa-magnifying-glass"></i></label>
-                            <input @keyup="filterContacts()" v-model="contactSearchFilter" type="text" id="contact-search" placeholder="Cerca o inizia una nuova chat">
+                            <input 
+                                @keyup="filterContacts()" 
+                                id="contactSearchFilter"
+                                v-model="contactSearchFilter" 
+                                type="text" id="contact-search" 
+                                placeholder="Cerca o inizia una nuova chat"
+                             >
                         </div>
                    </div>
                     <!-- sezione contatti con cui chattare  -->
                     <div class="contact-list-container">
-                        <div v-for="(singleContact,index) in contacts" v-if="contacts[1].visible === true" class="contact-list">  
+                        <div class="contact-list" >  
 
                             <!-- **** single contact template **** -->
-                            <div @click="setActiveElement(index)" :class="{'active': index === currentActiveElement}" class="single-contact">    <!--aggiungere classe active quando è selezionato -->
+                            <div
+                                v-for="(singleContact,index) in contacts" 
+                                v-if="singleContact.visible === true" 
+                                @click="setActiveElement(index)"
+                                :class="{'active': index === currentActiveElement}" 
+                                class="single-contact"
+                             > 
                                 <div class="contact-image">
-                                    <img :src="`img/avatar${singleContact.avatar}.jpg`" :alt="`avatar di ${singleContact.name}` ">
+                                    <img 
+                                        :src="`img/avatar${singleContact.avatar}.jpg`" 
+                                        :alt="`avatar di ${singleContact.name}` "
+                                    >
                                 </div>
                                 <div class="contact-text">
                                     <h2>{{ singleContact.name }}</h2>
@@ -75,7 +90,10 @@
                     <div class="user-bar">
                         <div  class="user-info">
                           <div class="user-profile-pic">
-                            <img :src="`img/avatar${contacts[currentActiveElement].avatar}.jpg`" alt="mia immagine">
+                            <img
+                                :src="`img/avatar${contacts[currentActiveElement].avatar}.jpg`"
+                                alt="mia immagine"
+                              >
                           </div>
                           <div class="user-profile-text">
                             <h2>{{contacts[currentActiveElement].name}}</h2>
@@ -94,7 +112,12 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="input-text-msg">
-                            <input @keyup.enter="sendNewMessage(), setTimeout(sendAnswer, 1000)" v-model="userNewMessageText" type="text" placeholder="Scrivi un messaggio">
+                            <input
+                                @keyup.enter="sendNewMessage(), setTimeout(sendAnswer, 1000)"
+                                v-model="userNewMessageText" 
+                                type="text" 
+                                placeholder="Scrivi un messaggio"
+                             >
                         </div>
                         <div class="mic-open">
                             <i class="fa-solid fa-microphone"></i>
@@ -103,8 +126,13 @@
                     <!-- finestra della chat  -->
                     <div class="chat-window-container">
 
-                        <!-- inizio messaggio  -->
-                        <div v-for="(singleMessage, index) in contacts[currentActiveElement].messages" :class="{'sent-msg': singleMessage.status == 'sent', 'received-msg': singleMessage.status == 'received' }" class="msg-container">
+                        <!-- start message  -->
+                        <div 
+                            v-for="(singleMessage, index) in contacts[currentActiveElement].messages" 
+                            :class="{'sent-msg': singleMessage.status === 'sent',
+                             'received-msg': singleMessage.status === 'received' }"
+                            class="msg-container"
+                         >
                             <div  class="msg-bubble">
                                 <div class="msg-text">
                                     {{singleMessage.text}}
@@ -114,7 +142,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- fine messaggio  -->
+                        <!-- end message  -->
 
                     </div>
                 </div>

@@ -255,34 +255,34 @@
       position: relative;
   }
 
-    .msg-container:first-child{
-        margin-top: 3rem;
-    }
-
-    .msg-container.received-msg{
-        align-self: flex-start;
-        background-color:  #ffffff;
-    }
-
-    .msg-container.sent-msg{
-        align-self: flex-end;
-        background-color: #caecb1;
-    }
-
-    .msg-container .msg-bubble{
-        margin-bottom: 1rem;
-        min-width: 200px;
-        position: relative;
-    }
-
-    .msg-bubble .msg-text{
-      margin-bottom: 1rem;
-      overflow-wrap: break-word;
-    }
-
-  .sending-time p{
-      font-size: 0.6rem;
-      position: absolute;
-      right: 0.3rem;
-      color: gray;
+  .msg-container:first-child{
+      margin-top: 3rem;
   }
+
+  .msg-container.received-msg{
+      align-self: flex-start;
+      background-color:  #ffffff;
+  }
+
+  .msg-container.sent-msg{
+      align-self: flex-end;
+      background-color: #caecb1;
+  }
+
+  .msg-container .msg-bubble{
+      margin-bottom: 1rem;
+      min-width: 200px;
+      position: relative;
+  }
+
+  .msg-bubble .msg-text{
+    margin-bottom: 1rem;
+    overflow-wrap: break-word;
+  }
+
+.sending-time p{
+    font-size: 0.6rem;
+    position: absolute;
+    right: 0.3rem;
+    color: gray;
+}
