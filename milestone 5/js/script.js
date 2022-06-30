@@ -11,9 +11,9 @@ var app = new Vue(
         messageActive: 0,
         menuIsVisible: false,
         contactSearchFilter: '',
-        lastAccess: dayjs().format('10:mm'),
         currentActiveElement: 0,
         userNewMessageText: '',
+        backupAccess: dayjs().format('10:mm'),
     contacts: [
         {
             name: 'Michele',
