@@ -8,6 +8,7 @@ var app = new Vue(
  {
     el: '#root',
     data: {
+        menuIsVisible: false,
         contactSearchFilter: '',
         lastAccess: dayjs().format('10:mm'),
         currentActiveElement: 0,
@@ -142,7 +143,22 @@ var app = new Vue(
                         element.visible = false;
                     }
                 });
-             },        
+             },
+              
+             showMenu() {
+              // toggle per mostrare il menu al click sulla chevron
+                this.menuIsVisible = !this.menuIsVisible;
+            },
+            
+            hideMenu(){
+            //    la tendina aperta si chiuderà cliccando fuori
+                this.menuIsVisible = false;
+            },
+
+            deleteMessage(Index) {
+            //  cliccando su "Delete message" si cancellerà il messaggio  
+                this.contacts[this.currentActiveElement].messages.splice(Index, 1);
+            },
         }
 // ! *************** fine methods ********************
  } );

@@ -170,6 +170,7 @@
     width: 100%;
     overflow-y: auto; 
     height: 100%;
+    z-index: 5;
   }
 
   .single-contact{
@@ -207,7 +208,6 @@
       position:absolute;
       bottom: 0; 
       left: 0;
-      z-index: 6;
       padding: 0.5rem 0;
       background-color: #f3eeea;
    }
@@ -285,7 +285,7 @@
     font-size: 0.6rem;
     position: absolute;
     right: 0.3rem;
-    color: #6a7376;;
+    color: #6a7376;
 }
 
 .msg-bubble .chevron{
@@ -308,11 +308,6 @@
   top: 50px;
   z-index: 10;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  display: none;
-}
-
-.drop-down-menu.show-menu{
-  display: block;
 }
 
 .drop-down-menu p{
@@ -320,7 +315,20 @@ font-size: 0.8rem;
 cursor: pointer;
 }
 
+.drop-down-menu p:hover{
+  color: #6a7376;
+}
+
 .drop-down-menu p:first-child{
   margin-bottom: 0.5rem;
 }
 
+#click-out{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 5;
+  
+}
