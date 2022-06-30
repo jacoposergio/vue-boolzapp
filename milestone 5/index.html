@@ -110,7 +110,7 @@
                             <div
                                 v-if="contacts[currentActiveElement].messages.length - 1 >= 0" 
                                 class="last-access">Ultimo accesso oggi alle {{contacts[currentActiveElement].messages
-                                    [contacts[currentActiveElement].messages.length - 1].date.slice(11)}}
+                                    [contacts[currentActiveElement].messages.length - 1].date.slice(11).slice(3)}}
                             </div>
                             <div class="last-access" v-else >
                                 Ultimo accesso oggi alle {{backupAccess}}
