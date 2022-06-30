@@ -13,7 +13,7 @@ var app = new Vue(
         contactSearchFilter: '',
         currentActiveElement: 0,
         userNewMessageText: '',
-        backupAccess: dayjs().format('10:mm'),
+        backupAccess: dayjs().format('10:mm:ss'),
         backupAccessFull: dayjs().format('DD/MM/YYYY HH:mm:ss'),
     contacts: [
         {
