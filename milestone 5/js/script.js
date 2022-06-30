@@ -14,6 +14,7 @@ var app = new Vue(
         currentActiveElement: 0,
         userNewMessageText: '',
         backupAccess: dayjs().format('10:mm'),
+        backupAccessFull: dayjs().format('DD/MM/YYYY HH:mm:ss'),
     contacts: [
         {
             name: 'Michele',

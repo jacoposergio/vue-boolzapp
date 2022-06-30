@@ -87,6 +87,7 @@
                                 </div>
                                 <div class="last-msg-date">
                                     <p v-if="singleContact.messages.length - 1 >= 0" >{{singleContact.messages[singleContact.messages.length - 1].date}}</p>
+                                    <p v-else>{{backupAccess}}</p>
                                 </div>
                             </div>
                         <!-- **** end single contact template **** -->
