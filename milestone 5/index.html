@@ -128,10 +128,10 @@
 
                         <!-- start message  -->
                         <div 
+                            class="msg-container"
                             v-for="(singleMessage, index) in contacts[currentActiveElement].messages" 
                             :class="{'sent-msg': singleMessage.status === 'sent',
                              'received-msg': singleMessage.status === 'received' }"
-                            class="msg-container"
                          >
                             <div  class="msg-bubble">
                                 <div class="chevron">
@@ -144,7 +144,11 @@
                                     <p>{{singleMessage.date}}</p>
                                 </div>
                             </div>
-                        </div>
+                            <div class="drop-down-menu ">
+                                <p>Message info</p>
+                                <p>Delete message</p>
+                            </div>
+                        </div>  
                         <!-- end message  -->
 
                     </div>

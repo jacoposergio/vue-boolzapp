@@ -105,7 +105,7 @@
   .chat-column .last-access{
     font-size: 0.7rem;
     font-weight: 500;
-    color: #b1b1b1;
+    color: #6a7376;;
   }
 
   /* active notification disclaimer ( sx) */
@@ -285,10 +285,42 @@
     font-size: 0.6rem;
     position: absolute;
     right: 0.3rem;
-    color: gray;
+    color: #6a7376;;
 }
 
 .msg-bubble .chevron{
      position: absolute;
      right: 0;
+     color: #6a7376;
+     display: none;
 }
+
+.msg-container:hover .chevron {
+  display: block;
+}
+
+.drop-down-menu{
+  background-color: white;
+  position: absolute;
+  padding: 0.9rem 0.9rem; 
+  text-align: center;
+  right: 10px;
+  top: 50px;
+  z-index: 10;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.drop-down-menu.show-menu{
+  display: block;
+}
+
+.drop-down-menu p{
+font-size: 0.8rem;
+cursor: pointer;
+}
+
+.drop-down-menu p:first-child{
+  margin-bottom: 0.5rem;
+}
+
