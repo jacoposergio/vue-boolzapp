@@ -336,6 +336,17 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.drop-down-menu.last-menu{ 
+  background-color: white;
+  position: absolute;
+  padding: 0.9rem 0.9rem; 
+  text-align: center;
+  right: 10px;
+  top: -45px;
+  z-index: 10;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 .drop-down-menu p{
 font-size: 0.8rem;
 cursor: pointer;

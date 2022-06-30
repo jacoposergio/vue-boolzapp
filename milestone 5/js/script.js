@@ -162,11 +162,6 @@ var app = new Vue(
             //  cliccando su "Delete message" si cancellerà il messaggio  
                 this.contacts[this.currentActiveElement].messages.splice(Index, 1);
             },
-            
-            SetLastMessage() {
-                this.lastMessage = contact.messages.length ;
-            }
-            
         }
         // ! *************** fine methods ********************
  } );
